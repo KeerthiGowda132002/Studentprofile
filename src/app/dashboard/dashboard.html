@@ -1,0 +1,56 @@
+<div class="dashboard">
+
+  <h1>Student Management Dashboard</h1>
+
+  <div class="menu">
+
+    <button routerLink="/dashboard">
+      Dashboard
+    </button>
+
+    <button routerLink="/student">
+      Students
+    </button>
+
+    <button>
+      Add Student
+    </button>
+
+    <button>
+      Profile
+    </button>
+
+    <button (click)="logout()">
+      Logout
+    </button>
+
+  </div>
+
+  <div class="content">
+
+    <h2>Welcome to Dashboard 👋</h2>
+
+    <p>You have successfully logged in.</p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Total Students</h3>
+        <p>0</p>
+      </div>
+
+      <div class="card">
+        <h3>Active Students</h3>
+        <p>0</p>
+      </div>
+
+      <div class="card">
+        <h3>Average Marks</h3>
+        <p>0</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

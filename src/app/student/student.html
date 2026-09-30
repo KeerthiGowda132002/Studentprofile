@@ -1,0 +1,191 @@
+<h2>Student List</h2>
+
+<p>Total Students: {{ students.length }}</p>
+
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Class Code</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Marks</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (student of students; track student.Id) {
+      <tr>
+        <td>{{ student.Id }}</td>
+        <td>{{ student.ClassCode }}</td>
+        <td>{{ student.Name }}</td>
+        <td>{{ student.City }}</td>
+        <td>{{ student.Marks }}</td>
+        <td>{{ student.Email }}</td>
+
+        <td>
+          <button
+            type="button"
+            (click)="deleteStudent(student.Id!)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Add Student</h2>
+
+<div>
+  <label>Class Code:</label>
+  <input
+    type="text"
+    [(ngModel)]="newStudent.ClassCode">
+</div>
+
+<br>
+
+<div>
+  <label>Name:</label>
+  <input
+    type="text"
+    [(ngModel)]="newStudent.Name">
+</div>
+
+<br>
+
+<div>
+  <label>City:</label>
+  <input
+    type="text"
+    [(ngModel)]="newStudent.City">
+</div>
+
+<br>
+
+<div>
+  <label>Marks:</label>
+  <input
+    type="number"
+    [(ngModel)]="newStudent.Marks">
+</div>
+
+<br>
+
+<div>
+  <label>Email:</label>
+  <input
+    type="email"
+    [(ngModel)]="newStudent.Email">
+</div>
+
+<br>
+
+<button
+  type="button"
+  (click)="addStudent()">
+  Add Student
+</button>
+
+<hr>
+
+<h2>Get Student By ID</h2>
+
+<input
+  type="number"
+  [(ngModel)]="searchId"
+  placeholder="Enter Student ID">
+
+<button
+  type="button"
+  (click)="getStudentById()">
+  Get Student
+</button>
+
+@if (selectedStudent) {
+
+  <h3>Student Details</h3>
+
+  <p>Id: {{ selectedStudent.Id }}</p>
+  <p>Class Code: {{ selectedStudent.ClassCode }}</p>
+  <p>Name: {{ selectedStudent.Name }}</p>
+  <p>City: {{ selectedStudent.City }}</p>
+  <p>Marks: {{ selectedStudent.Marks }}</p>
+  <p>Email: {{ selectedStudent.Email }}</p>
+}
+
+<hr>
+
+<h2>Update Student By Marks</h2>
+
+<div>
+  <label>Current Marks:</label>
+
+  <input
+    type="number"
+    [(ngModel)]="updateMarks">
+</div>
+
+<br>
+
+<div>
+  <label>New Class Code:</label>
+
+  <input
+    type="text"
+    [(ngModel)]="updateStudent.ClassCode">
+</div>
+
+<br>
+
+<div>
+  <label>New Name:</label>
+
+  <input
+    type="text"
+    [(ngModel)]="updateStudent.Name">
+</div>
+
+<br>
+
+<div>
+  <label>New City:</label>
+
+  <input
+    type="text"
+    [(ngModel)]="updateStudent.City">
+</div>
+
+<br>
+
+<div>
+  <label>New Marks:</label>
+
+  <input
+    type="number"
+    [(ngModel)]="updateStudent.Marks">
+</div>
+
+<br>
+
+<div>
+  <label>New Email:</label>
+
+  <input
+    type="email"
+    [(ngModel)]="updateStudent.Email">
+</div>
+
+<br>
+
+<button
+  type="button"
+  (click)="updateByMarks()">
+  Update Student
+</button>
+<button (click)="logout()">Logout</button>

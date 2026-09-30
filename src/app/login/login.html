@@ -1,0 +1,30 @@
+<h2>Login</h2>
+
+<div>
+  <label>Username:</label>
+
+  <input
+    type="text"
+    [(ngModel)]="username"
+    placeholder="Enter username">
+</div>
+
+<br>
+
+<div>
+  <label>Password:</label>
+
+  <input
+    type="password"
+    [(ngModel)]="password"
+    placeholder="Enter password">
+</div>
+
+<br>
+
+<button
+  type="button"
+  (click)="login()">
+  Login
+</button>
+
